@@ -2,6 +2,44 @@
 $is_auth = rand(0, 1);
 
 $user_name = 'Алексей Онипко'; // укажите здесь ваше имя
+
+$popular_posts = [
+    [
+        'header' => 'Цитата',
+        'type' => 'post-quote',
+        'content' => 'Мы в жизни любим только раз, а после ищем лишь похожих',
+        'user-name' => 'Лариса',
+        'userpic' => 'userpic-larisa-small.jpg'
+    ],
+    [
+        'header' => 'Игра престолов',
+        'type' => 'post-text',
+        'content' => 'Не могу дождаться начала финального сезона своего любимого сериала!',
+        'user-name' => 'Владик',
+        'userpic' => 'userpic.jpg' 
+    ],
+    [
+        'header' => 'Наконец, обработал фотки!',
+        'type' => 'post-photo',
+        'content' => 'rock-medium.jpg',
+        'user-name' => 'Виктор',
+        'userpic' => 'userpic-mark.jpg' 
+    ],
+    [
+        'header' => 'Моя мечта',
+        'type' => 'post-photo',
+        'content' => 'coast-medium.jpg',
+        'user-name' => 'Лариса',
+        'userpic' => 'userpic-larisa-small.jpg' 
+    ],
+    [
+        'header' => 'Лучшие курсы',
+        'type' => 'post-link',
+        'content' => 'www.htmlacademy.ru',
+        'user-name' => 'Владик',
+        'userpic' => 'userpic.jpg' 
+    ]
+    ];
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -203,64 +241,27 @@ $user_name = 'Алексей Онипко'; // укажите здесь ваш�
             </div>
         </div>
         <div class="popular__posts">
-        <?php $popular_posts = [
-            [
-                'header' => 'Цитата',
-                'type' => 'post-quote',
-                'content' => 'Мы в жизни любим только раз, а после ищем лишь похожих',
-                'user-name' => 'Лариса',
-                'userpic' => 'userpic-larisa-small.jpg'
-            ],
-            [
-                'header' => 'Игра престолов',
-                'type' => 'post-text',
-                'content' => 'Не могу дождаться начала финального сезона своего любимого сериала!',
-                'user-name' => 'Владик',
-                'userpic' => 'userpic.jpg' 
-            ],
-            [
-                'header' => 'Наконец, обработал фотки!',
-                'type' => 'post-photo',
-                'content' => 'rock-medium.jpg',
-                'user-name' => 'Виктор',
-                'userpic' => 'userpic-mark.jpg' 
-            ],
-            [
-                'header' => 'Моя мечта',
-                'type' => 'post-photo',
-                'content' => 'coast-medium.jpg',
-                'user-name' => 'Лариса',
-                'userpic' => 'userpic-larisa-small.jpg' 
-            ],
-            [
-                'header' => 'Лучшие курсы',
-                'type' => 'post-link',
-                'content' => 'www.htmlacademy.ru',
-                'user-name' => 'Владик',
-                'userpic' => 'userpic.jpg' 
-            ]
-            ];
-        ?>
+
         <?php foreach ($popular_posts as $post): ?>
             <article class="popular__post post <?=$post['type'];?>">
                 <header class="post__header">
                     <h2><?=$post['header'];?></h2>
                 </header>
                 <div class="post__main">
-                    <?php if($post['type'] == 'post-quote'): ?>
+                    <?php if($post['type'] === 'post-quote'): ?>
                 <blockquote>
                     <p>
                         <?=$post['content'];?>
                     </p>
                     <cite>Неизвестный Автор</cite>
                 </blockquote>
-                    <?php elseif($post['type'] == 'post-text'): ?>
+                    <?php elseif($post['type'] === 'post-text'): ?>
                         <p><?=$post['content'];?></p>
-                    <?php elseif($post['type'] == 'post-photo'): ?>
+                    <?php elseif($post['type'] === 'post-photo'): ?>
                         <div class="post-photo__image-wrapper">
                         <img src="img/<?=$post['content'];?>" alt="Фото от пользователя" width="360" height="240">
                         </div> 
-                    <?php elseif($post['type'] == 'post-link'): ?> 
+                    <?php elseif($post['type'] === 'post-link'): ?> 
                         <div class="post-link__wrapper">
                         <a class="post-link__external" href="http://" title="Перейти по ссылке">
                         <div class="post-link__info-wrapper">
