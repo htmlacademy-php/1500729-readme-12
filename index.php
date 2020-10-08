@@ -14,7 +14,7 @@ $popular_posts = [
     [
         'header' => 'Игра престолов',
         'type' => 'post-text',
-        'content' => 'Не могу дождаться начала финального сезона своего любимого сериала!',
+        'content' => 'Не могу дождаться начала финального сезона своего любимого сериала! Не могу дождаться начала финального сезона своего любимого сериала! Не могу дождаться начала финального сезона своего любимого сериала! Не могу дождаться начала финального сезона своего любимого сериала! Не могу дождаться начала финального сезона своего любимого сериала! Не могу дождаться начала финального сезона своего любимого сериала!',
         'user-name' => 'Владик',
         'userpic' => 'userpic.jpg' 
     ],
@@ -40,6 +40,31 @@ $popular_posts = [
         'userpic' => 'userpic.jpg' 
     ]
     ];
+   ;
+
+   function format_text($string, $simbols = 300) {
+    $words = explode (" ", $string);
+    foreach ($words as $word) {
+        $word_simbols = strlen(utf8_decode($word));
+        $summary_simbols = $summary_simbols + $word_simbols;
+        if ($summary_simbols <= $simbols) {
+            $formatted_text[] = $word;}
+        
+        else {   
+        break;
+        }   
+    };
+    $formatted_text = implode (" ",$formatted_text);
+    if ($summary_simbols > $simbols) {
+        $formatted_text = "<p>". $formatted_text ."..."."</p>" . '<a class="post-text__more-link" href="#">Читать далее</a>';
+    
+    }
+    
+    else {
+        $formatted_text = "<p>". $formatted_text ."</p>";
+    }
+            return $formatted_text;       
+};
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -256,7 +281,7 @@ $popular_posts = [
                     <cite>Неизвестный Автор</cite>
                 </blockquote>
                     <?php elseif($post['type'] === 'post-text'): ?>
-                        <p><?=$post['content'];?></p>
+                        <p><?= format_text($post['content']);?></p>
                     <?php elseif($post['type'] === 'post-photo'): ?>
                         <div class="post-photo__image-wrapper">
                         <img src="img/<?=$post['content'];?>" alt="Фото от пользователя" width="360" height="240">
