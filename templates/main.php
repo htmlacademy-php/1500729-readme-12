@@ -88,18 +88,18 @@
         <?php foreach ($popular_posts as $post): ?>
             <article class="popular__post post <?=$post['type'];?>">
                 <header class="post__header">
-                    <h2><?=$post['header'];?></h2>
+                    <h2><?=filter_text($post['header']);?></h2>
                 </header>
                 <div class="post__main">
                     <?php if($post['type'] === 'post-quote'): ?>
                 <blockquote>
                     <p>
-                        <?=$post['content'];?>
+                        <?=filter_text($post['content']);?>
                     </p>
                     <cite>Неизвестный Автор</cite>
                 </blockquote>
                     <?php elseif($post['type'] === 'post-text'): ?>
-                        <p><?= format_text($post['content']);?></p>
+                        <p><?=format_text(filter_text($post['content']));?></p>
                     <?php elseif($post['type'] === 'post-photo'): ?>
                         <div class="post-photo__image-wrapper">
                         <img src="img/<?=$post['content'];?>" alt="Фото от пользователя" width="360" height="240">
@@ -112,10 +112,10 @@
                                 <img src="https://www.google.com/s2/favicons?domain=vitadental.ru" alt="Иконка">
                             </div>
                             <div class="post-link__info">
-                                <h3><?=$post['header'];?></h3>
+                                <h3><?=filter_text($post['header']);?></h3>
                             </div>
                         </div>
-                        <span><?=$post['content'];?></span>
+                        <span><?=filter_text($post['content']);?></span>
                     </a>
                          </div>   
                     <?php endif; ?>
