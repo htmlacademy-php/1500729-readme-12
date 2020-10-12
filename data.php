@@ -1,6 +1,6 @@
 <?php
 $user_name = 'Алексей Онипко'; // укажите здесь ваше имя
-
+$index = 0;
 $popular_posts = [
     [
         'header' => 'Цитата',

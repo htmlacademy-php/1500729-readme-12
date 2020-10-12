@@ -122,13 +122,13 @@
                 </div>
                 <footer class="post__footer">
                     <div class="post__author">
-                        <a class="post__author-link" href="#" title="Автор">
+                        <a class="post__author-link" href="#" title="<?=$post['time_post'];?>">
                             <div class="post__avatar-wrapper">
                                 <img class="post__author-avatar" src="img/<?=$post['userpic'];?>" alt="Аватар пользователя">
                             </div>
                             <div class="post__info">
                                 <b class="post__author-name"><?=$post['user-name'];?></b>
-                                <time class="post__time" datetime="">дата</time>
+                                <time class="post__time" datetime="<?=$post['post_time'];?>"><?=$post['post_time_back'];?></time>
                             </div>
                         </a>
                     </div>
