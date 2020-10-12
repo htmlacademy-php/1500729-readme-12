@@ -1,5 +1,6 @@
 <?php
 $user_name = 'Алексей Онипко'; // укажите здесь ваше имя
+$is_auth = rand(0, 1);
 
 $popular_posts = [
     [
@@ -37,4 +38,4 @@ $popular_posts = [
         'user-name' => 'Владик',
         'userpic' => 'userpic.jpg' 
     ]
-    ];
+];

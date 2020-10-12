@@ -261,25 +261,39 @@ function generate_random_date($index)
     $dt = date('Y-m-d H:i:s', $ts);
 
     return $dt;
-};
-function format_text($string, $simbols = 300) {
+}
+
+function format_text($string, $simbols = 300) 
+{
     $words = explode(" ", $string);
+
     foreach ($words as $word) {
         $word_simbols = strlen(utf8_decode($word));
         $summary_simbols = $summary_simbols + $word_simbols;
+
         if ($summary_simbols <= $simbols) {
             $formatted_text[] = $word;
         }
+
         else {   
         break;
         }   
-    };
+    }
+
     $formatted_text = implode(" ", $formatted_text);
-    if ($summary_simbols > $simbols) {
-        $formatted_text = "<p>{$formatted_text}...</p>" . '<a class="post-text__more-link" href="#">Читать далее</a>';
-    }
-    else {
-        $formatted_text = "<p>$formatted_text</p>";
-    }
+
+        if ($summary_simbols > $simbols) {
+            $formatted_text = "<p>{$formatted_text}...</p>" . '<a class="post-text__more-link" href="#">Читать далее</a>';
+        }
+        else {
+            $formatted_text = "<p>$formatted_text</p>";
+        }
             return $formatted_text;       
-    }
+}
+
+// Функция, которая вырезает все теги
+function filter_text($string)
+{
+    $text = strip_tags($string);
+    return $text;
+}
