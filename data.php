@@ -1,6 +1,11 @@
 <?php
 $user_name = 'Алексей Онипко'; // укажите здесь ваше имя
+<<<<<<< HEAD
 $index = 0;
+=======
+$is_auth = rand(0, 1);
+
+>>>>>>> master
 $popular_posts = [
     [
         'header' => 'Цитата',
@@ -37,4 +42,4 @@ $popular_posts = [
         'user-name' => 'Владик',
         'userpic' => 'userpic.jpg' 
     ]
-    ];
+];

@@ -1,5 +1,9 @@
 <div class="container">
+<<<<<<< HEAD
         <h1 class="page__title page__title--popular">Популярное</h1>
+=======
+    <h1 class="page__title page__title--popular">Популярное</h1>
+>>>>>>> master
 </div>
     <div class="popular container">
         <div class="popular__filters-wrapper">
@@ -84,7 +88,6 @@
             </div>
         </div>
         <div class="popular__posts">
-
         <?php foreach ($popular_posts as $post): ?>
             <article class="popular__post post <?=$post['type'];?>">
                 <header class="post__header">
@@ -156,5 +159,6 @@
                 </footer>
             </article>
         <?php endforeach; ?>
-        </div>
-    </div>  
+    </div>
+</div> 
+ 
