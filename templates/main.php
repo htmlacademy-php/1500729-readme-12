@@ -1,9 +1,5 @@
 <div class="container">
-<<<<<<< HEAD
-        <h1 class="page__title page__title--popular">Популярное</h1>
-=======
     <h1 class="page__title page__title--popular">Популярное</h1>
->>>>>>> master
 </div>
     <div class="popular container">
         <div class="popular__filters-wrapper">
