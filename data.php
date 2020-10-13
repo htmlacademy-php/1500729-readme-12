@@ -1,7 +1,7 @@
 <?php
 $user_name = 'Алексей Онипко'; // укажите здесь ваше имя
 $is_auth = rand(0, 1);
-
+$index = 0;
 $popular_posts = [
     [
         'header' => 'Цитата',
