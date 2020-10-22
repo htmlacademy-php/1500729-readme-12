@@ -5,7 +5,8 @@ require_once('helpers.php');
 require_once('date.php');
 
 $content = include_template('main.php',
-                            ['popular_posts' => $popular_posts,]);                      
+                            ['popular_posts' => $popular_posts,
+                            'unit_of_time' => $unit_of_time]);                      
 $layout = include_template('layout.php', 
                           ['content' => $content,
                           'is_auth' => $is_auth, 
