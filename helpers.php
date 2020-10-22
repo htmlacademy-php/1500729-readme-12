@@ -297,3 +297,64 @@ function filter_text($string)
     $text = strip_tags($string);
     return $text;
 }
+
+/** 
+ * функция, которая возращает дату в относительном формате (сколько времени прошло)
+ * где $time - это дата в любом формате 
+ */
+function post_time(string $time, $units, $text = 'назад')
+{
+    $post_date = strtotime ($time);
+    $diff_time = time() - $post_date;
+
+    switch(true) 
+    {
+        case($diff_time < 3600):
+            $time_of_post = $diff_time / 60;
+            $time_of_post = floor($time_of_post);
+            $post_time = "{$time_of_post} " . get_noun_plural_form($time_of_post, $units[0][0], $units[0][1], $units[0][2]) . " {$text}";
+        
+        break;
+
+        case($diff_time >= 3600 && $diff_time < 86400):
+            $time_of_post = $diff_time / 3600;
+            $time_of_post = floor($time_of_post);
+            $post_time = "{$time_of_post} " . get_noun_plural_form($time_of_post, $units[1][0], $units[1][1], $units[1][2]) . " {$text}";
+            
+        break;
+
+        case($diff_time >= 86400 && $diff_time < 604800):
+            $time_of_post = $diff_time / 86400;
+            $time_of_post = floor($time_of_post);
+            $post_time = "{$time_of_post} " . get_noun_plural_form($time_of_post, $units[2][0], $units[2][1], $units[2][2]) . " {$text}";
+            
+        break;
+
+        case($diff_time >= 604800 && $diff_time < 3024000 ):
+            $time_of_post = $diff_time / 604800;
+            $time_of_post = floor($time_of_post);
+            $post_time = "{$time_of_post} " . get_noun_plural_form($time_of_post, $units[3][0], $units[3][1], $units[3][2]) . " {$text}";
+            
+        break;
+
+        case($diff_time >= 3024000):
+            $time_of_post = $diff_time / 3024000;
+            $time_of_post = floor($time_of_post);
+            $post_time = "{$time_of_post} " . get_noun_plural_form($time_of_post, 'месяц', 'месяца', 'месяцев') . " {$text}";
+            
+        break;
+    }
+    return $post_time;
+}
+
+/**
+ * функция, которая возращает дату в вормате дд.мм.гггг чч:мм
+ * где $time дата в любом формате
+ */
+function format_date($time)
+{
+    $post_date = strtotime($time);
+    $format_date = date ('d.m.Y H:i', $post_date);
+
+    return $format_date;
+}
