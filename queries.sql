@@ -11,8 +11,7 @@ INSERT INTO users (email, login, password, avatar) VALUES ('test2@test.ru', 'В�
 INSERT INTO users (email, login, password, avatar) VALUES ('test3@test.ru', 'Виктор', '123456', 'userpic-mark.jpg');
 
 -- добавление постов
-INSERT INTO posts 
-(
+INSERT INTO posts (
     title,
     content_text, 
     author_quotes, 
@@ -20,8 +19,7 @@ INSERT INTO posts
     user_id, 
     post_type
 ) 
-VALUES 
-(
+VALUES (
     'Цитата', 
     'Мы в жизни любим только раз, а после ищем лишь похожих',
     'Неизвестный автор',
@@ -29,56 +27,49 @@ VALUES
     1,
     1
 );
-INSERT INTO posts 
-(
+INSERT INTO posts (
     title,
     content_text, 
     count_views, 
     user_id, 
     post_type
 )
-VALUES 
-(
+VALUES (
     'Игра престолов',
     'Не могу дождаться начала финального сезона своего любимого сериала!',
     12,
     2,
     2
 );
-INSERT INTO posts 
-(
+INSERT INTO posts (
     title,
     picture, 
     count_views, 
     user_id, 
     post_type
 )
-VALUES 
-(
+VALUES (
     'Наконец, обработал фотки!',
     'rock-medium.jpg',
     24,
     3,
     3  
 );
-INSERT INTO posts 
-(
+INSERT INTO posts (
     title,
     picture, 
     count_views, 
     user_id, 
     post_type
 )
-VALUES 
-(
+VALUES (
     'Моя мечта',
     'coast-medium.jpg',
     165,
     1,
     3  
-    );
-INSERT INTO posts 
-(
+);
+INSERT INTO posts (
     title,
     href, 
     count_views, 
@@ -94,26 +85,22 @@ VALUES (
 );
 
 -- добавление комментариев
-INSERT INTO comments 
-(
+INSERT INTO comments (
     content,
     user_id,
     post_id
 )
-VALUES 
-(
+VALUES (
     'Очень грусная цитата...',
     3,
     1
 );
-INSERT INTO comments 
-(
+INSERT INTO comments (
     content,
     user_id,
     post_id
 )
-VALUES 
-(
+VALUES (
     'Классное фото!',
     1,
     3
