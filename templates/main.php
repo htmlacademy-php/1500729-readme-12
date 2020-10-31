@@ -42,7 +42,7 @@
                     </li>
                     <li class="popular__filters-item filters__item">
                         <a class="filters__button filters__button--photo button" href="#">
-                            <span class="visually-hidden">Фото</span>
+                            <span class="visually-hidden"><?=$types_content[3]['name_type']?></span>
                             <svg class="filters__icon" width="22" height="18">
                                 <use xlink:href="#icon-filter-photo"></use>
                             </svg>
@@ -50,7 +50,7 @@
                     </li>
                     <li class="popular__filters-item filters__item">
                         <a class="filters__button filters__button--video button" href="#">
-                            <span class="visually-hidden">Видео</span>
+                            <span class="visually-hidden"><?=$types_content[0]['name_type']?></span>
                             <svg class="filters__icon" width="24" height="16">
                                 <use xlink:href="#icon-filter-video"></use>
                             </svg>
@@ -58,7 +58,7 @@
                     </li>
                     <li class="popular__filters-item filters__item">
                         <a class="filters__button filters__button--text button" href="#">
-                            <span class="visually-hidden">Текст</span>
+                            <span class="visually-hidden"><?=$types_content[2]['name_type']?></span>
                             <svg class="filters__icon" width="20" height="21">
                                 <use xlink:href="#icon-filter-text"></use>
                             </svg>
@@ -66,7 +66,7 @@
                     </li>
                     <li class="popular__filters-item filters__item">
                         <a class="filters__button filters__button--quote button" href="#">
-                            <span class="visually-hidden">Цитата</span>
+                            <span class="visually-hidden"><?=$types_content[4]['name_type']?></span>
                             <svg class="filters__icon" width="21" height="20">
                                 <use xlink:href="#icon-filter-quote"></use>
                             </svg>
@@ -74,7 +74,7 @@
                     </li>
                     <li class="popular__filters-item filters__item">
                         <a class="filters__button filters__button--link button" href="#">
-                            <span class="visually-hidden">Ссылка</span>
+                            <span class="visually-hidden"><?=$types_content[1]['name_type']?></span>
                             <svg class="filters__icon" width="21" height="18">
                                 <use xlink:href="#icon-filter-link"></use>
                             </svg>
