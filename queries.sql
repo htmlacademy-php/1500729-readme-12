@@ -1,14 +1,16 @@
 -- добавление типов постов 
-INSERT INTO post_types (name_type, name_class_icons) VALUES ('цитата', 'post-quote');
-INSERT INTO post_types (name_type, name_class_icons) VALUES ('текст', 'post-text');
-INSERT INTO post_types (name_type, name_class_icons) VALUES ('фото', 'post-photo');
-INSERT INTO post_types (name_type, name_class_icons) VALUES ('ссылка', 'post-link');
-INSERT INTO post_types (name_type, name_class_icons) VALUES ('видео', 'post-video');
+INSERT INTO post_types (name_type, name_class_icons) 
+VALUES ('Цитата', 'post-quote'),
+       ('Текст', 'post-text'),
+       ('Фото', 'post-photo'),
+       ('Ссылка', 'post-link'),
+       ('Видео', 'post-video');
 
 -- добавление пользователей
-INSERT INTO users (email, login, password, avatar) VALUES ('test1@test.ru', 'Лариса', '123456', 'userpic-larisa-small.jpg');
-INSERT INTO users (email, login, password, avatar) VALUES ('test2@test.ru', 'Владик', '123456', 'userpic.jpg');
-INSERT INTO users (email, login, password, avatar) VALUES ('test3@test.ru', 'Виктор', '123456', 'userpic-mark.jpg');
+INSERT INTO users (email, login, password, avatar) 
+VALUES ('test1@test.ru', 'Лариса', '123456', 'userpic-larisa-small.jpg'),
+       ('test2@test.ru', 'Владик', '123456', 'userpic.jpg'),
+       ('test3@test.ru', 'Виктор', '123456', 'userpic-mark.jpg');
 
 -- добавление постов
 INSERT INTO posts (
@@ -94,13 +96,8 @@ VALUES (
     'Очень грусная цитата...',
     3,
     1
-);
-INSERT INTO comments (
-    content,
-    user_id,
-    post_id
-)
-VALUES (
+),
+ (
     'Классное фото!',
     1,
     3
