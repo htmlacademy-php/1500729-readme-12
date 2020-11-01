@@ -41,7 +41,7 @@
                         </a>
                     </li>
                     <li class="popular__filters-item filters__item">
-                        <a class="filters__button filters__button--photo button" href="#">
+                        <a class="filters__button filters__button--photo button <?php if ($type == "photo"):?><?=$button_class;?><?php endif;?>" href="/?type=photo">
                             <span class="visually-hidden"><?=$types_content[3]['name_type']?></span>
                             <svg class="filters__icon" width="22" height="18">
                                 <use xlink:href="#icon-filter-photo"></use>
@@ -49,7 +49,7 @@
                         </a>
                     </li>
                     <li class="popular__filters-item filters__item">
-                        <a class="filters__button filters__button--video button" href="#">
+                        <a class="filters__button filters__button--video button <?php if ($type == "video"):?><?=$button_class;?><?php endif;?>" href="/?type=video">
                             <span class="visually-hidden"><?=$types_content[0]['name_type']?></span>
                             <svg class="filters__icon" width="24" height="16">
                                 <use xlink:href="#icon-filter-video"></use>
@@ -57,7 +57,7 @@
                         </a>
                     </li>
                     <li class="popular__filters-item filters__item">
-                        <a class="filters__button filters__button--text button" href="#">
+                        <a class="filters__button filters__button--text button <?php if ($type == "text"):?><?=$button_class;?><?php endif;?>" href="/?type=text">
                             <span class="visually-hidden"><?=$types_content[2]['name_type']?></span>
                             <svg class="filters__icon" width="20" height="21">
                                 <use xlink:href="#icon-filter-text"></use>
@@ -65,7 +65,7 @@
                         </a>
                     </li>
                     <li class="popular__filters-item filters__item">
-                        <a class="filters__button filters__button--quote button" href="#">
+                        <a class="filters__button filters__button--quote button <?php if ($type == "quote"):?><?=$button_class;?><?php endif;?>" href="/?type=quote">
                             <span class="visually-hidden"><?=$types_content[4]['name_type']?></span>
                             <svg class="filters__icon" width="21" height="20">
                                 <use xlink:href="#icon-filter-quote"></use>
@@ -73,7 +73,7 @@
                         </a>
                     </li>
                     <li class="popular__filters-item filters__item">
-                        <a class="filters__button filters__button--link button" href="#">
+                        <a class="filters__button filters__button--link button<?php if ($type == "link"):?><?=$button_class;?><?php endif;?>" href="/?type=link">
                             <span class="visually-hidden"><?=$types_content[1]['name_type']?></span>
                             <svg class="filters__icon" width="21" height="18">
                                 <use xlink:href="#icon-filter-link"></use>
