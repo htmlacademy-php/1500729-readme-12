@@ -18,38 +18,32 @@ if (!$link) {
            $types_content = mysqli_fetch_all ($result_types_content, MYSQLI_ASSOC);
        }
        
-       $filter = "";
-       $button_class = "";
-       $type = filter_input (INPUT_GET, 'type');
+       if (isset($_GET['type'])) {
+        $type = $_GET['type'];
 
-       switch ($type) {
-           case "photo":
-                $filter = '= 4';
-                $button_class = " filters__button--active";
+           switch ($type) {
+             case "photo":
+                $filter = ' WHERE p.post_type = 4';
                 break;
-           case "video":
-                $filter = '= 6';
-                $button_class = " filters__button--active";
+             case "video":
+                $filter = ' WHERE p.post_type = 6';
                 break;
-           case "link":
-                $filter = '= 5';
-                $button_class = " filters__button--active";
+             case "link":
+                $filter = ' WHERE p.post_type = 5';
                 break;
-           case "quote":
-                $filter = '= 2';
-                $button_class = " filters__button--active";
+             case "quote":
+                $filter = ' WHERE p.post_type = 2';
                 break;
-            case "text":
-                $filter = '= 3';
-                $button_class = " filters__button--active";
+             case "text":
+                $filter = ' WHERE p.post_type = 3';
                 break;
+           }
        }
 
-       $query_popular_posts = 'SELECT title, content_text, author_quotes, picture, video, href, login, name_class_icons, avatar
+       $query_popular_posts = 'SELECT p.id, title, content_text, author_quotes, picture, video, href, login, name_class_icons, avatar
                                FROM posts p
                                JOIN users u ON p.user_id = u.id 
-                               JOIN post_types pt ON p.post_type = pt.id
-                               WHERE p.post_type ' . $filter .
+                               JOIN post_types pt ON p.post_type = pt.id' . $filter . 
                                ' ORDER BY count_views DESC
                                LIMIT 6';
        $result_popular_posts = mysqli_query ($link, $query_popular_posts);

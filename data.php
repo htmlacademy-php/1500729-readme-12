@@ -37,3 +37,6 @@ $db = [
     'password' => 'root',
     'base' => 'readme'
 ];
+
+$filter = "";
+$button_class =  "filters__button--active";

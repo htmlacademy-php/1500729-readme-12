@@ -36,7 +36,7 @@
                 <b class="popular__filters-caption filters__caption">Тип контента:</b>
                 <ul class="popular__filters-list filters__list">
                     <li class="popular__filters-item popular__filters-item--all filters__item filters__item--all">
-                        <a class="filters__button filters__button--ellipse filters__button--all filters__button--active" href="#">
+<a class="filters__button filters__button--ellipse filters__button--all <?php if (!$type): ?><?= $button_class; ?> <?php endif; ?> " href="/">
                             <span>Все</span>
                         </a>
                     </li>
@@ -87,7 +87,7 @@
         <?php foreach ($popular_posts as $post): ?>
             <article class="popular__post post <?=$post['name_class_icons'];?>">
                 <header class="post__header">
-                    <h2><?=filter_text($post['title']);?></h2>
+                    <h2><a href = "/post.php/?id=<?= $post['id']; ?>"><?=filter_text($post['title']);?></a></h2>
                 </header>
                 <div class="post__main">
                     <?php if($post['name_class_icons'] === 'post-quote'): ?>
