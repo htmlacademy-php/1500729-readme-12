@@ -126,7 +126,7 @@
                                 <img class="post__author-avatar" src="img/<?=$post['avatar'];?>" alt="Аватар пользователя">
                             </div>
                             <div class="post__info">
-                                <b class="post__author-name"><?=$post['user-name'];?></b>
+                                <b class="post__author-name"><?=$post['login'];?></b>
                                 <time class="post__time" datetime="<?=$post['post_time'];?>"><?= post_time($post['post_time'], $unit_of_time);?></time>
                             </div>
                         </a>

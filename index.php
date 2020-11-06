@@ -19,7 +19,7 @@ if (!$link) {
        }
        
        if (isset($_GET['type'])) {
-        $type = $_GET['type'];
+           $type = $_GET['type'];
 
            switch ($type) {
              case "photo":
@@ -60,7 +60,8 @@ $content = include_template('main.php',
                             'unit_of_time' => $unit_of_time,
                             'types_content' => $types_content,
                             'button_class' => $button_class,
-                            'type' => $type]);                      
+                            'type' => $type]);
+
 $layout = include_template('layout.php', 
                           ['content' => $content,
                           'is_auth' => $is_auth, 
