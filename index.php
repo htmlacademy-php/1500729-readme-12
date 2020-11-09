@@ -23,19 +23,19 @@ if (!$link) {
 
            switch ($type) {
              case "photo":
-                $filter = ' WHERE p.post_type = 4';
+                $filter = ' WHERE p.post_type = 3';
                 break;
              case "video":
-                $filter = ' WHERE p.post_type = 6';
-                break;
-             case "link":
                 $filter = ' WHERE p.post_type = 5';
                 break;
+             case "link":
+                $filter = ' WHERE p.post_type = 4';
+                break;
              case "quote":
-                $filter = ' WHERE p.post_type = 2';
+                $filter = ' WHERE p.post_type = 1';
                 break;
              case "text":
-                $filter = ' WHERE p.post_type = 3';
+                $filter = ' WHERE p.post_type = 2';
                 break;
            }
        }
