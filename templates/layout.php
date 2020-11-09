@@ -114,10 +114,16 @@
 <section class="page__main page__main--popular">
     <?=$content ?>
 </section>
-<?php else: ?>
+<?php elseif ($post_content): ?>
 <main class="page__main page__main--publication">
     <?= $post_content ?>
 </main>
+
+<?php elseif ($form_post): ?>
+<main class="page__main page__main--adding-post">
+    <?= $form_post ?>
+</main>
+
 <?php endif; ?>
 
 <footer class="footer">
