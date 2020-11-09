@@ -5,19 +5,19 @@
       <div class="post-details__wrapper <?= $post_page['name_class_icons'] ?>">
         <div class="post-details__main-block post post--details">
 
-        <?php if ($post_page['post_type'] == 4): ?>
+        <?php if ($post_page['post_type'] == 3): ?>
           <div class="post-details__image-wrapper post-photo__image-wrapper">
             <img src="/img/<?= $post_page['picture'] ?>" alt="Фото от пользователя" width="760" height="507">
           </div>
 
-        <?php elseif ($post_page['post_type'] == 3): ?>
+        <?php elseif ($post_page['post_type'] == 2): ?>
           <div class="post__main">
             <p>
               <?= $post_page['content_text']; ?>
           </p>
         </div>
 
-        <?php elseif ($post_page['post_type'] == 6): ?>
+        <?php elseif ($post_page['post_type'] == 5): ?>
         <div class="post__main">
         <div class="post-video__block">
           <div class="post-video__preview">
@@ -43,7 +43,7 @@
         </div>
       </div>
 
-      <?php elseif ($post_page['post_type'] == 2): ?>
+      <?php elseif ($post_page['post_type'] == 1): ?>
         <div class="post__main">
                   <blockquote>
                     <p>
@@ -53,15 +53,16 @@
                   </blockquote>
         </div>
 
-      <?php elseif ($post_page['post_type'] == 5): ?>
+      <?php elseif ($post_page['post_type'] == 4): ?>
         <div class="post__main">
                   <div class="post-link__wrapper">
                     <a class="post-link__external" href="http://<?= $post_page['href'] ?>" title="Перейти по ссылке">
-                      <div class="post-link__icon-wrapper">
+                    <div class="post-link__icon-wrapper">
                         <img src="/img/logo-vita.jpg" alt="Иконка">
                       </div>
                       <div class="post-link__info">
                         <h3><?= $post_page['title'] ?></h3>
+                        <p>Семейная стоматология в Адлере</p>
                         <span><?= $post_page['href'] ?></span>
                       </div>
                       <svg class="post-link__arrow" width="11" height="16">
