@@ -5,19 +5,19 @@
       <div class="post-details__wrapper <?= $post_page['name_class_icons'] ?>">
         <div class="post-details__main-block post post--details">
 
-        <?php if ($post_page['post_type'] == 4): ?>
+        <?php if ($post_page['post_type'] == 3): ?>
           <div class="post-details__image-wrapper post-photo__image-wrapper">
             <img src="/img/<?= $post_page['picture'] ?>" alt="Фото от пользователя" width="760" height="507">
           </div>
 
-        <?php elseif ($post_page['post_type'] == 3): ?>
+        <?php elseif ($post_page['post_type'] == 2): ?>
           <div class="post__main">
             <p>
               <?= $post_page['content_text']; ?>
           </p>
         </div>
 
-        <?php elseif ($post_page['post_type'] == 6): ?>
+        <?php elseif ($post_page['post_type'] == 5): ?>
         <div class="post__main">
         <div class="post-video__block">
           <div class="post-video__preview">
@@ -43,21 +43,11 @@
         </div>
       </div>
 
-      <?php elseif ($post_page['post_type'] == 2): ?>
-        <div class="post__main">
-                  <blockquote>
-                    <p>
-                       <?= $post_page['content_text']; ?>
-                    </p>
-                    <cite><?= $post_page['author_quotes'] ?></cite>
-                  </blockquote>
-        </div>
-
-      <?php elseif ($post_page['post_type'] == 5): ?>
+      <?php elseif ($post_page['post_type'] == 4): ?>
         <div class="post__main">
                   <div class="post-link__wrapper">
                     <a class="post-link__external" href="http://<?= $post_page['href'] ?>" title="Перейти по ссылке">
-                      <div class="post-link__icon-wrapper">
+                    <div class="post-link__icon-wrapper">
                         <img src="/img/logo-vita.jpg" alt="Иконка">
                       </div>
                       <div class="post-link__info">
@@ -70,6 +60,16 @@
                     </a>
                   </div>
          </div>
+
+      <?php elseif ($post_page['post_type'] == 1): ?>
+        <div class="post__main">
+                  <blockquote>
+                    <p>
+                       <?= $post_page['content_text']; ?>
+                    </p>
+                    <cite><?= $post_page['author_quotes'] ?></cite>
+                  </blockquote>
+        </div>
 
         <?php endif; ?>
         
@@ -105,7 +105,7 @@
           <div class="comments">
             <form class="comments__form form" action="#" method="post">
               <div class="comments__my-avatar">
-                <img class="comments__picture" src="/img/userpic-medium.jpg" alt="Аватар пользователя">
+                <img class="comments__picture" src="/img/userpic-medium.jpg" width="40" alt="Аватар пользователя">
               </div>
               <div class="form__input-section form__input-section--error">
                 <textarea class="comments__textarea form__textarea form__input" placeholder="Ваш комментарий"></textarea>
@@ -123,7 +123,7 @@
                 <li class="comments__item user">
                   <div class="comments__avatar">
                     <a class="user__avatar-link" href="#">
-                      <img class="comments__picture" src="/img/userpic-larisa.jpg" alt="Аватар пользователя">
+                      <img class="comments__picture" width="40" src="img/userpic-larisa.jpg" alt="Аватар пользователя">
                     </a>
                   </div>
                   <div class="comments__info">
@@ -141,7 +141,7 @@
                 <li class="comments__item user">
                   <div class="comments__avatar">
                     <a class="user__avatar-link" href="#">
-                      <img class="comments__picture" src="/img/userpic-larisa.jpg" alt="Аватар пользователя">
+                      <img class="comments__picture" width="40" src="/img/userpic-larisa.jpg" alt="Аватар пользователя">
                     </a>
                   </div>
                   <div class="comments__info">

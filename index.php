@@ -1,10 +1,7 @@
 <?php
-date_default_timezone_set('Europe/Moscow');
+require_once('connect.php');
 require_once('data.php');   
 require_once('helpers.php');
-
-$link = mysqli_connect ($db['host'], $db['login'], $db['password'], $db['base']);
-mysqli_set_charset($link, "utf8");
 
 if (!$link) {
     $error = mysqli_connect_error($link);
@@ -23,19 +20,19 @@ if (!$link) {
 
            switch ($type) {
              case "photo":
-                $filter = ' WHERE p.post_type = 4';
+                $filter = ' WHERE p.post_type = 3';
                 break;
              case "video":
-                $filter = ' WHERE p.post_type = 6';
-                break;
-             case "link":
                 $filter = ' WHERE p.post_type = 5';
                 break;
+             case "link":
+                $filter = ' WHERE p.post_type = 4';
+                break;
              case "quote":
-                $filter = ' WHERE p.post_type = 2';
+                $filter = ' WHERE p.post_type = 1';
                 break;
              case "text":
-                $filter = ' WHERE p.post_type = 3';
+                $filter = ' WHERE p.post_type = 2';
                 break;
            }
        }
