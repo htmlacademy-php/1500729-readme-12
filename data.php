@@ -31,12 +31,5 @@ $unit_of_time = [
     ]
 ];
 
-$db = [
-    'host' => '127.0.0.1',
-    'login' => 'root',
-    'password' => 'root',
-    'base' => 'readme'
-];
-
 $filter = "";
 $button_class =  "filters__button--active";

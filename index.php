@@ -1,10 +1,7 @@
 <?php
-date_default_timezone_set('Europe/Moscow');
+require_once('connect.php');
 require_once('data.php');   
 require_once('helpers.php');
-
-$link = mysqli_connect ($db['host'], $db['login'], $db['password'], $db['base']);
-mysqli_set_charset($link, "utf8");
 
 if (!$link) {
     $error = mysqli_connect_error($link);
