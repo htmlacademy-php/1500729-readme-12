@@ -1,10 +1,7 @@
 <?php
-date_default_timezone_set('Europe/Moscow');
+require_once('connect.php');
 require_once('data.php');   
 require_once('helpers.php');
-
-$link = mysqli_connect ($db['host'], $db['login'], $db['password'], $db['base']);
-mysqli_set_charset($link, "utf8");
 
 if (!$link) {
     $error = mysqli_connect_error($link);
@@ -15,7 +12,7 @@ if (!$link) {
        $result_types__of_content = mysqli_query ($link, $query_types_of_content);
        $types_of_content = mysqli_fetch_all ($result_types__of_content, MYSQLI_ASSOC);
 
-       $add_post = include_template ('test.php');
+       $add_post = include_template ('adding-post.html');
 
        print ($add_post);
        print_r($_POST);
