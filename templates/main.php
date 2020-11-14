@@ -36,12 +36,12 @@
                 <b class="popular__filters-caption filters__caption">Тип контента:</b>
                 <ul class="popular__filters-list filters__list">
                     <li class="popular__filters-item popular__filters-item--all filters__item filters__item--all">
-                        <a class="filters__button filters__button--ellipse filters__button--all filters__button--active" href="#">
+<a class="filters__button filters__button--ellipse filters__button--all <?= (!$type) ? $button_class : '' ?>" href="/">
                             <span>Все</span>
                         </a>
                     </li>
                     <li class="popular__filters-item filters__item">
-                        <a class="filters__button filters__button--photo button" href="#">
+                        <a class="filters__button filters__button--photo button <?= ($type == 'photo') ? $button_class : '' ?>" href="/?type=photo">
                             <span class="visually-hidden"><?=$types_content[3]['name_type']?></span>
                             <svg class="filters__icon" width="22" height="18">
                                 <use xlink:href="#icon-filter-photo"></use>
@@ -49,7 +49,7 @@
                         </a>
                     </li>
                     <li class="popular__filters-item filters__item">
-                        <a class="filters__button filters__button--video button" href="#">
+                        <a class="filters__button filters__button--video button <?= ($type == 'video') ? $button_class : '' ?>" href="/?type=video">
                             <span class="visually-hidden"><?=$types_content[0]['name_type']?></span>
                             <svg class="filters__icon" width="24" height="16">
                                 <use xlink:href="#icon-filter-video"></use>
@@ -57,7 +57,7 @@
                         </a>
                     </li>
                     <li class="popular__filters-item filters__item">
-                        <a class="filters__button filters__button--text button" href="#">
+                        <a class="filters__button filters__button--text button <?= ($type == 'text') ? $button_class : '' ?>" href="/?type=text">
                             <span class="visually-hidden"><?=$types_content[2]['name_type']?></span>
                             <svg class="filters__icon" width="20" height="21">
                                 <use xlink:href="#icon-filter-text"></use>
@@ -65,7 +65,7 @@
                         </a>
                     </li>
                     <li class="popular__filters-item filters__item">
-                        <a class="filters__button filters__button--quote button" href="#">
+                        <a class="filters__button filters__button--quote button <?= ($type == 'quote') ? $button_class : '' ?>" href="/?type=quote">
                             <span class="visually-hidden"><?=$types_content[4]['name_type']?></span>
                             <svg class="filters__icon" width="21" height="20">
                                 <use xlink:href="#icon-filter-quote"></use>
@@ -73,7 +73,7 @@
                         </a>
                     </li>
                     <li class="popular__filters-item filters__item">
-                        <a class="filters__button filters__button--link button" href="#">
+                        <a class="filters__button filters__button--link button <?= ($type == 'link') ? $button_class : '' ?>" href="/?type=link">
                             <span class="visually-hidden"><?=$types_content[1]['name_type']?></span>
                             <svg class="filters__icon" width="21" height="18">
                                 <use xlink:href="#icon-filter-link"></use>
@@ -87,7 +87,7 @@
         <?php foreach ($popular_posts as $post): ?>
             <article class="popular__post post <?=$post['name_class_icons'];?>">
                 <header class="post__header">
-                    <h2><?=filter_text($post['title']);?></h2>
+                    <h2><a href="post.php?id=<?= $post['id']; ?>"><?=filter_text($post['title']);?></a></h2>
                 </header>
                 <div class="post__main">
                     <?php if($post['name_class_icons'] === 'post-quote'): ?>
@@ -126,7 +126,7 @@
                                 <img class="post__author-avatar" src="img/<?=$post['avatar'];?>" alt="Аватар пользователя">
                             </div>
                             <div class="post__info">
-                                <b class="post__author-name"><?=$post['user-name'];?></b>
+                                <b class="post__author-name"><?=$post['login'];?></b>
                                 <time class="post__time" datetime="<?=$post['post_time'];?>"><?= post_time($post['post_time'], $unit_of_time);?></time>
                             </div>
                         </a>
